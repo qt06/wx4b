@@ -28,90 +28,130 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.HotkeyField = new exscape.HotkeyControl();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.hotkeyControl1 = new exscape.HotkeyControl();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.HideRadioButton = new System.Windows.Forms.RadioButton();
+            this.ExitRadioButton = new System.Windows.Forms.RadioButton();
+            this.OKBTN = new System.Windows.Forms.Button();
+            this.CCBTN = new System.Windows.Forms.Button();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.HotkeyField);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(700, 100);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "快捷键";
+            // 
+            // HotkeyField
+            // 
+            this.HotkeyField.Hotkey = System.Windows.Forms.Keys.None;
+            this.HotkeyField.HotkeyModifiers = System.Windows.Forms.Keys.None;
+            this.HotkeyField.Location = new System.Drawing.Point(11, 25);
+            this.HotkeyField.Name = "HotkeyField";
+            this.HotkeyField.Size = new System.Drawing.Size(500, 21);
+            this.HotkeyField.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Location = new System.Drawing.Point(3, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 12);
+            this.label1.Size = new System.Drawing.Size(125, 12);
             this.label1.TabIndex = 0;
-            this.label1.Text = "快捷键";
+            this.label1.Text = "用于显示或隐藏主窗口";
             // 
-            // label2
+            // groupBox2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 12);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "关闭窗口时";
+            this.groupBox2.Controls.Add(this.HideRadioButton);
+            this.groupBox2.Controls.Add(this.ExitRadioButton);
+            this.groupBox2.Location = new System.Drawing.Point(0, 110);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(700, 100);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "关闭窗口时";
             // 
-            // radioButton1
+            // HideRadioButton
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(24, 27);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(71, 16);
-            this.radioButton1.TabIndex = 3;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "直接退出";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.HideRadioButton.AutoSize = true;
+            this.HideRadioButton.Location = new System.Drawing.Point(80, 17);
+            this.HideRadioButton.Name = "HideRadioButton";
+            this.HideRadioButton.Size = new System.Drawing.Size(107, 16);
+            this.HideRadioButton.TabIndex = 2;
+            this.HideRadioButton.Text = "隐藏到通知区域";
+            this.HideRadioButton.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // ExitRadioButton
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(31, 34);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(143, 16);
-            this.radioButton2.TabIndex = 4;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "隐藏到任务栏通知区域";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            this.ExitRadioButton.AutoSize = true;
+            this.ExitRadioButton.Checked = true;
+            this.ExitRadioButton.Location = new System.Drawing.Point(3, 17);
+            this.ExitRadioButton.Name = "ExitRadioButton";
+            this.ExitRadioButton.Size = new System.Drawing.Size(71, 16);
+            this.ExitRadioButton.TabIndex = 1;
+            this.ExitRadioButton.TabStop = true;
+            this.ExitRadioButton.Text = "直接退出";
+            this.ExitRadioButton.UseVisualStyleBackColor = true;
             // 
-            // hotkeyControl1
+            // OKBTN
             // 
-            this.hotkeyControl1.AccessibleName = "";
-            this.hotkeyControl1.AccessibleRole = System.Windows.Forms.AccessibleRole.HotkeyField;
-            this.hotkeyControl1.Hotkey = System.Windows.Forms.Keys.None;
-            this.hotkeyControl1.HotkeyModifiers = System.Windows.Forms.Keys.None;
-            this.hotkeyControl1.Location = new System.Drawing.Point(8, 8);
-            this.hotkeyControl1.Name = "hotkeyControl1";
-            this.hotkeyControl1.Size = new System.Drawing.Size(500, 21);
-            this.hotkeyControl1.TabIndex = 1;
-            this.hotkeyControl1.Text = "None";
+            this.OKBTN.Location = new System.Drawing.Point(10, 220);
+            this.OKBTN.Name = "OKBTN";
+            this.OKBTN.Size = new System.Drawing.Size(75, 23);
+            this.OKBTN.TabIndex = 2;
+            this.OKBTN.Text = "保存(&S)";
+            this.OKBTN.UseVisualStyleBackColor = true;
+            this.OKBTN.Click += new System.EventHandler(this.OKBTN_Click);
+            // 
+            // CCBTN
+            // 
+            this.CCBTN.Location = new System.Drawing.Point(600, 220);
+            this.CCBTN.Name = "CCBTN";
+            this.CCBTN.Size = new System.Drawing.Size(75, 23);
+            this.CCBTN.TabIndex = 3;
+            this.CCBTN.Text = "取消(&C)";
+            this.CCBTN.UseVisualStyleBackColor = true;
+            this.CCBTN.Click += new System.EventHandler(this.CCBTN_Click);
             // 
             // SettingWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.hotkeyControl1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.CCBTN);
+            this.Controls.Add(this.OKBTN);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Name = "SettingWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "设置 - 微信网页版";
+            this.Shown += new System.EventHandler(this.SettingWindow_Shown);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
+        private System.Windows.Forms.GroupBox groupBox1;
+        private exscape.HotkeyControl HotkeyField;
         private System.Windows.Forms.Label label1;
-        private exscape.HotkeyControl hotkeyControl1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton HideRadioButton;
+        private System.Windows.Forms.RadioButton ExitRadioButton;
+        private System.Windows.Forms.Button OKBTN;
+        private System.Windows.Forms.Button CCBTN;
     }
 }

@@ -63,7 +63,7 @@ namespace exscape
         {
             this.ContextMenu = dummy; // Disable right-clicking
             this.Text = "None";
-
+            this.AccessibleRole = AccessibleRole.HotkeyField;
             // Handle events that occurs when keys are pressed
             this.KeyPress += new KeyPressEventHandler(HotkeyControl_KeyPress);
             this.KeyUp += new KeyEventHandler(HotkeyControl_KeyUp);
@@ -254,7 +254,6 @@ namespace exscape
                 this.Text = "None";
                 return;
             }
-
             // Only validate input if it comes from the user
             if (bCalledProgramatically == false)
             {
