@@ -62,8 +62,9 @@ namespace exscape
         public HotkeyControl()
         {
             this.ContextMenu = dummy; // Disable right-clicking
-            this.Text = "None";
+            //this.Text = "None";
             this.AccessibleRole = AccessibleRole.HotkeyField;
+
             // Handle events that occurs when keys are pressed
             this.KeyPress += new KeyPressEventHandler(HotkeyControl_KeyPress);
             this.KeyUp += new KeyEventHandler(HotkeyControl_KeyUp);
@@ -245,6 +246,12 @@ namespace exscape
             if (this._hotkey == Keys.None)
             {
                 this.Text = "None";
+                return;
+            }
+
+            // shift + tab
+            if (this._modifiers == Keys.Shift && this._hotkey == Keys.ShiftKey)
+            {
                 return;
             }
 

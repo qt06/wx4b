@@ -13,17 +13,18 @@ using wx4b.Properties;
     {
         private string CloseType { get; set; }
         private string Hotkey { get; set; }
-
-        public SettingWindow()
+        private MainWindow mw;
+        public SettingWindow(MainWindow mw)
         {
             InitializeComponent();
+            this.mw = mw;
         }
 
         private void SettingWindow_Shown(object sender, EventArgs e)
         {
-            this.CloseType = Settings.Default.CloseType;
+            this.mw.UnregisterHotkey();
+                        this.CloseType = Settings.Default.CloseType;
             this.Hotkey = Settings.Default.Hotkey;
-            this.HotkeyField.Text = this.Hotkey;
             if (this.CloseType == "Exit")
             {
                 this.ExitRadioButton.Checked = true;
@@ -32,7 +33,23 @@ using wx4b.Properties;
             {
                 this.HideRadioButton.Checked = true;
             }
-        
+            this.HotkeyField.Text = this.Hotkey;
+
+            string[] sa = this.Hotkey.Split(new char[] { '+' });
+            if (sa.Length >= 2)
+            {
+                try
+                {
+                                this.HotkeyField.HotkeyModifiers = (Keys)Enum.Parse(typeof(Keys), sa[0].Trim());
+                this.HotkeyField.Hotkey = (Keys)Enum.Parse(typeof(Keys), sa[1].Trim());
+                }
+                catch (Exception)
+                {
+                    //此处错误则热键域默认为空即可
+                    //throw;
+                }
+
+            }
         }
 
         private void OKBTN_Click(object sender, EventArgs e)
@@ -48,6 +65,7 @@ using wx4b.Properties;
             Settings.Default.CloseType = this.CloseType;
             Settings.Default.Hotkey = this.HotkeyField.Text;
             Settings.Default.Save();
+            this.mw.RegisterHotkey();
             this.Close();
         }
 
