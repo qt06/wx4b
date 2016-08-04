@@ -80,9 +80,17 @@ namespace wx4b
 
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
-            HtmlElement ele = webBrowser1.Document.CreateElement("script");
-            ele.InnerText = this.accjs;
+            if (webBrowser1.ReadyState == WebBrowserReadyState.Complete)
+            {
+                HtmlElement he = webBrowser1.Document.GetElementById("iamwx");
+                if (he == null)
+                {
+                                                HtmlElement ele = webBrowser1.Document.CreateElement("script");
+            ele.Id = "iamwx";
+                        ele.InnerHtml = this.accjs;
             webBrowser1.Document.Body.AppendChild(ele);
+                    }
+            }
         }
 
         private void setWebBrowserObjectForScripting()

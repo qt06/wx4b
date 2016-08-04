@@ -25,7 +25,7 @@ if (!iamwx) {
 
         if (record.type == 'childList' && record.addedNodes.length > 0) {
           var newNodes = record.addedNodes;
-          for (i = 0, len = newNodes.length; i < len; i++) {
+          for (var i = 0, len = newNodes.length; i < len; i++) {
             if (newNodes[i].nodeType == 1) {
               var chat = newNodes[i].querySelector(".chat_item");
               if (chat != null) {
