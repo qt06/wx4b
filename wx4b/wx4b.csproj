@@ -101,9 +101,9 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>copy /Y "$(ProjectDir)acc.js" "$(TargetDir)acc.js"
-copy /B /Y "$(TargetPath)" "$(SolutionDir)output\$(TargetFileName)"
-copy /Y "$(ProjectDir)acc.js" "$(SolutionDir)output\acc.js"
-copy /Y "$(SolutionDir)README.md" "$(SolutionDir)output\使用说明.txt"</PostBuildEvent>
+copy /B /Y "$(TargetDir)$(TargetFileName)" "$(SolutionDir)distribution\$(TargetFileName)"
+copy /Y "$(ProjectDir)acc.js" "$(SolutionDir)distribution\acc.js"
+copy /Y "$(SolutionDir)README.md" "$(SolutionDir)distribution\使用说明.txt"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
