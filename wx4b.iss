@@ -56,6 +56,13 @@ Name: "{app}"; Permissions: everyone-full
 [Files]
 Source: "distribution\*"; DestDir: "{app}"; Permissions: everyone-full; Flags: replacesameversion recursesubdirs createallsubdirs sortfilesbyextension restartreplace overwritereadonly
 
+[Icons]
+Name: "{group}\{#APPNAME}\{#APPNAME}"; Filename: "{app}\{#APPEXE}"; WorkingDir: "{app}"; Comment: "{#SHORTCUTDESCRIPTION}"; IconFilename: ""
+Name: "{group}\{#APPNAME}\{#HELP}"; Filename: "{app}\使用说明.txt"
+Name: "{group}\{#APPNAME}\{#VISITWEBSITE}"; Filename: "{#APPPUBLISHERURL}"
+Name: "{group}\{#APPNAME}\{#FEEDBACK}"; Filename: {#FEEDBACKURL}
+Name: "{group}\{#APPNAME}\{cm:UninstallProgram,{#APPNAME}}"; Filename: "{uninstallexe}"
+Name: "{commondesktop}\{#APPNAME}"; Filename: "{app}\{#APPEXE}"; WorkingDir: "{app}"; Comment: "{#SHORTCUTDESCRIPTION}"; IconFilename: ""
 
 [Run]
   FileName: "{app}\{#APPEXE}"; Description: "立即开始使用"; Flags: postinstall
