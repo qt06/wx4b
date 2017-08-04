@@ -1,45 +1,73 @@
-﻿#define AppName "微信网页版"
-#define VersionInfoVersion "1.0.0.1"
+﻿#define AppId "wx4b.accjs.org"
+#define AppName "微信网页版"
+#define AppVersion "1.0.0.2"
+#define AppVerName "微信网页版 1.0"
 #define APPEXE "wx4b.exe"
-#define APPPUBLISHER "微信网页版"
-#define VERSIONINFOCOPYRIGHT "微信网页版(www.accjs.org)"
-#define VERSIONINFODESCRIPTION "微信网页版无障碍优化版本，作者： 杨永全"
+#define AppPublisher "微信网页版"
+#define AppPublisherURL "http://accjs.org/"
+#define AppSupportURL "http://accjs.org/"
+#define AppUpdatesURL "http://accjs.org/"
+#define AppSupportPhone ""
+#define AppReadmeFile ""
+#define AppContact "http://accjs.org/"
+#define AppComments "微信网页版无障碍优化版本，作者： 杨永全"
+#define AppCopyright "http://accjs.org/"
 #define VISITWEBSITE "访问网站"
 #define FEEDBACK   "意见反馈"
 #define SHORTCUTDESCRIPTION "微信网页版"
 #define ISUPDATELOG "查看升级日志"
 #define ISUPDATELOGFILE "升级日志.txt"
 #define HELP "查看帮助"
-#define INSTALLDOTNET "正在安装系统运行库（微软.Net Framework），请稍后。"
-#define APPPUBLISHERURL "http://www.accjs.org/"
-#define APPSUPPORTURL "http://www.accjs.org/"
-#define APPUPDATESURL "http://www.accjs.org/"
 #define FEEDBACKURL " http://www.accjs.org/forum-index-fid-4.htm"
 
-[Setup]
+
+[setup]
+AppId={#AppId}
 AppName={#AppName}
-AppVerName={#AppName} {#VersionInfoVersion}
-VersionInfoVersion={#VersionInfoVersion}
-AppPublisher={#APPPUBLISHER}
+AppVersion={#AppVersion}
+AppVerName={#AppVerName}
+AppPublisher={#AppPublisher}
 AppPublisherURL={#AppPublisherURL}
 AppSupportURL={#AppSupportURL}
 AppUpdatesURL={#AppUpdatesURL}
-VersionInfoCopyright={#VersionInfoCopyright}
-VersionInfoDescription={#VersionInfoDescription}
+AppSupportPhone={#AppSupportPhone}
+AppReadmeFile={#AppReadmeFile}
+AppContact={#AppContact}
+AppComments={#AppComments}
+AppCopyright={#AppCopyright}
+VersionInfoProductName={#AppName}
+VersionInfoProductVersion={#AppVersion}
+VersionInfoProductTextVersion={#AppVersion}
+VersionInfoVersion={#AppVersion}
+VersionInfoTextVersion={#AppVersion}
+VersionInfoDescription={#AppComments}
+VersionInfoCopyright={#AppCopyright}
+VersionInfoCompany={#AppPublisher}
+DefaultDirName={pf}\wx4b
+DefaultGroupName={#AppPublisher}
+;DisableDirPage=yes
+;DisableFinishedPage=yes
+;DisableProgramGroupPage=yes
+DisableReadyMemo=yes
+;DisableReadyPage=yes
+;DisableStartupPrompt=yes
+;DisableWelcomePage=yes
 PrivilegesRequired=admin
-DefaultDirName={ini:{src}\update.ini,settings,path|{pf}\wx4b}
-DefaultGroupName={#APPPUBLISHER}
-DisableProgramGroupPage=yes
-DisableDirPage=yes
-DisableReadyPage=yes
-;UninstallFilesDir={app}
-;Uninstallable = no
-closeapplications=no
+CloseApplications=no
 UsePreviousAppDir=no
+Uninstallable=yes
+UninstallFilesDir={app}
+OutputDir=output
 OutputBaseFilename=wx4b_setup
+;SourceDir=sources
+;setupiconfile=icon.ICO
+;LicenseFile
+;infoBeforeFile = sources\licence.txt
+RestartIfNeededByRun=no
+ShowLanguageDialog=auto
 Compression=lzma
 SolidCompression=yes
-;Appid={#APPGUID}
+
 
 [Languages]
 Name: chinesesimp; MessagesFile: compiler:Default.isl
@@ -54,14 +82,14 @@ FinishedLabelNoIcons=祝您使用愉快。
 Name: "{app}"; Permissions: everyone-full
 
 [Files]
-Source: "distribution\*"; DestDir: "{app}"; Permissions: everyone-full; Flags: replacesameversion recursesubdirs createallsubdirs sortfilesbyextension restartreplace overwritereadonly
+Source: "distribution\*"; DestDir: "{app}"; Permissions: everyone-full; Flags: ignoreversion recursesubdirs createallsubdirs sortfilesbyextension restartreplace overwritereadonly
 
 [Icons]
-Name: "{group}\{#APPNAME}\{#APPNAME}"; Filename: "{app}\{#APPEXE}"; WorkingDir: "{app}"; Comment: "{#SHORTCUTDESCRIPTION}"; IconFilename: ""
-Name: "{group}\{#APPNAME}\{#HELP}"; Filename: "{app}\使用说明.txt"
-Name: "{group}\{#APPNAME}\{#VISITWEBSITE}"; Filename: "{#APPPUBLISHERURL}"
-Name: "{group}\{#APPNAME}\{#FEEDBACK}"; Filename: {#FEEDBACKURL}
-Name: "{group}\{#APPNAME}\{cm:UninstallProgram,{#APPNAME}}"; Filename: "{uninstallexe}"
+Name: "{group}\{#APPNAME}"; Filename: "{app}\{#APPEXE}"; WorkingDir: "{app}"; Comment: "{#SHORTCUTDESCRIPTION}"; IconFilename: ""
+Name: "{group}\{#HELP}"; Filename: "{app}\使用说明.txt"
+Name: "{group}\{#VISITWEBSITE}"; Filename: "{#APPPUBLISHERURL}"
+Name: "{group}\{#FEEDBACK}"; Filename: {#FEEDBACKURL}
+Name: "{group}\{cm:UninstallProgram,{#APPNAME}}"; Filename: "{uninstallexe}"
 Name: "{commondesktop}\{#APPNAME}"; Filename: "{app}\{#APPEXE}"; WorkingDir: "{app}"; Comment: "{#SHORTCUTDESCRIPTION}"; IconFilename: ""
 
 [Run]
