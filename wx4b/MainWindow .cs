@@ -165,7 +165,7 @@ namespace wx4b
 
         private void ExitMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
         #endregion
 
@@ -208,8 +208,17 @@ namespace wx4b
         {
             HotKey.UnregisterHotKey(this.Handle, 12345);
         }
+
+        private void notifyIcon1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Show();
+                this.Focus();
+            }
+        }
         #endregion
 
-//end MainWindow
+        //end MainWindow
     }
 }
