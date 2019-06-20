@@ -1,6 +1,6 @@
 ﻿#define AppId "wx4b.accjs.org"
 #define AppName "微信网页版"
-#define AppVersion "1.0.0.3"
+#define AppVersion "1.0.0.5"
 #define AppVerName "微信网页版 1.0"
 #define APPEXE "wx4b.exe"
 #define AppPublisher "微信网页版"
